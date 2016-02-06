@@ -2,7 +2,7 @@ import java.nio.charset.Charset
 
 enablePlugins(ScalaJSPlugin)
 
-name := "Scala.js Electron Skeleton"
+name := "Sheepable Electron"
 
 scalaVersion := "2.11.7"
 
@@ -21,7 +21,7 @@ val electronMainPath = SettingKey[File]("electron-main-path", "The absolute path
 val electronMain = TaskKey[File]("electron-main", "Generate Electron application's main file.")
 
 electronMainPath := {
-  baseDirectory.value / ".." / "build-electron" / "main.js"
+  baseDirectory.value / "build" / "main.js"
 }
 
 // we generate the code for electron's main by aggregating the fastOptJS code, the launcher code and a little hack for the global stuff
