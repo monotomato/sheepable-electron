@@ -10,7 +10,6 @@ object Main extends js.JSApp {
   def main(): Unit = {
 
     val app = g.require("app").asInstanceOf[App]  // Module to control application life.
-
     // Report crashes to our server.
     g.require("crash-reporter").start();
 
@@ -32,8 +31,6 @@ object Main extends js.JSApp {
     app.on("ready", () => {
       // Create the browser window.
       mainWindow = BrowserWindow(width = 800, height = 600)
-
-      println(g)
       
       // and load the index.html of the app.
       mainWindow.loadUrl("file://" + g.__dirname + "/index.html")
